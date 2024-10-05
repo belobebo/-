@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العداد</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .counter {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>القاضية ممكن بقدم أفشة</h1>
+    <div class="counter" id="counter">
+        جاري حساب الوقت...
+    </div>
+
+    <script>
+        function updateCounter() {
+            const startDate = new Date('2020-11-27T00:00:00');
+            const now = new Date();
+            const diff = now - startDate;
+
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)) % 12;
+            const weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7)) % 4;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24)) % 7;
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById('counter').innerHTML = 
+                `مرت ${years} سنة، ${months} شهر، ${weeks} أسبوع، ${days} يوم، ${hours} ساعة، ${minutes} دقيقة، و ${seconds} ثانية منذ 27 نوفمبر 2020`;
+        }
+
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
